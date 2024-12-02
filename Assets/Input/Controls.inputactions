@@ -1,0 +1,54 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "7502f344-a62d-4f07-b23d-8e4e53654caf",
+            "actions": [
+                {
+                    "name": "Mouse",
+                    "type": "Value",
+                    "id": "325ca34e-81de-443c-8a97-8a8a013e6fe6",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Force",
+                    "type": "Button",
+                    "id": "7a0c3097-669f-4294-aade-fe874bb40b33",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.05)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c00b2b8f-5568-4b3c-8f0a-1c14bb909497",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5746f75-6d76-4104-b95d-f12f22168f05",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Force",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
