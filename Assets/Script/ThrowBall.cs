@@ -39,6 +39,9 @@ public class ThrowBall : MonoBehaviour
     [SerializeField] GameObject menu;
     [SerializeField] GameObject game;
     [SerializeField] GameObject postGame;
+    //----
+    [SerializeField] GameObject batter;
+    Animator batterAnimator;
 
     void Start()
     {
@@ -93,7 +96,8 @@ public class ThrowBall : MonoBehaviour
             {
                 once += Time.fixedDeltaTime;
                 ballRigidbody.gravityScale = 1;
-                ballRigidbody.AddForce(new Vector2(force,10), ForceMode2D.Impulse);  
+                ballRigidbody.AddForce(new Vector2(force,10), ForceMode2D.Impulse);
+                batterAnimator.PlayInFixedTime("hit");
             }
         }
     }
@@ -110,6 +114,7 @@ public class ThrowBall : MonoBehaviour
     {
         ballRigidbody = ball.GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        batterAnimator = batter.GetComponent<Animator>();
     }
 
     void GetInputs()
@@ -136,6 +141,8 @@ public class ThrowBall : MonoBehaviour
         force = 0;
         saveOnce = 0;
         canThrow = true;
+
+        batterAnimator.PlayInFixedTime("idle");
     }
 
     void SaveToJson()
